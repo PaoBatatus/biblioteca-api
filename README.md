@@ -1,14 +1,15 @@
+Markdown
 # 📚 Sistema de Biblioteca - API REST (NestJS + SQLite)
 
-API modular desenvolvida com NestJS, TypeORM e SQLite (`better-sqlite3`) para gerir uma biblioteca escolar ou universitária, garantindo portabilidade local e conformidade com regras de negócio estritas.
+API modular desenvolvida com **NestJS**, **TypeORM** e **SQLite** (`better-sqlite3`) para gerir uma biblioteca escolar ou universitária, garantindo portabilidade local e conformidade com regras de negócio estritas.
 
 ---
 
 ## 🚀 Como Rodar o Projeto e o Banco de Dados
 
 ### Pré-requisitos
-* Node.js (versão 18 ou superior recomendada)
-* npm (gerenciador de pacotes do Node)
+* **Node.js** (versão 18 ou superior recomendada)
+* **npm** (gerenciador de pacotes do Node)
 
 ### Passo a Passo
 
@@ -16,10 +17,13 @@ API modular desenvolvida com NestJS, TypeORM e SQLite (`better-sqlite3`) para ge
    No terminal, na raiz do projeto, execute:
    ```bash
    npm install
-   
-2. **Rodar:**
-   npm run start:dev<img width="6399" height="3745" alt="modelo" src="https://github.com/user-attachments/assets/20af0cb0-ff33-4a4c-912e-8dd0077bc003" />
+Iniciar a aplicação em modo de desenvolvimento:
 
+Bash
+npm run start:dev
+Nota sobre a Base de Dados: O ficheiro da base de dados (database.sqlite) será gerado automaticamente na raiz do projeto assim que a aplicação iniciar, através do sincronismo do TypeORM.
+
+A API estará disponível em: http://localhost:3000
 
 📋 Lista de Endpoints
 👤 Autores (/autores)
@@ -68,4 +72,6 @@ GET /emprestimos/:id - Detalha um empréstimo específico
 PATCH /emprestimos/:id/devolver - Regista a devolução de um livro (calcula eventuais multas por atraso)
 
 DELETE /emprestimos/:id - Remove o registo de um empréstimo
+
+<img width="6399" height="3745" alt="modelo" src="https://github.com/user-attachments/assets/6773bb76-de90-4d81-8505-54058e3d7f79" />
 
