@@ -1,15 +1,18 @@
-# Sistema de Gestão de Biblioteca - API REST (NestJS)
+# 📚 Sistema de Biblioteca - API REST (NestJS + SQLite)
 
-API REST desenvolvida em **NestJS**, **TypeORM** e **PostgreSQL**, estruturada sob uma arquitetura modular baseada em MVC (Model-View-Controller) com controladores finos, validação global de DTOs, exceções customizadas e tratamento de respostas padronizadas.
+API modular desenvolvida com NestJS, TypeORM e SQLite (`better-sqlite3`) para gerir uma biblioteca escolar ou universitária, garantindo portabilidade local e conformidade com regras de negócio estritas.
 
 ---
 
-## 🚀 Como Instalar e Executar
+## 🚀 Como Rodar o Projeto e o Banco de Dados
 
 ### Pré-requisitos
-* Node.js (versão 16+ recomendada, compatível com resolução `node16`/`nodenext`)
-* PostgreSQL a correr localmente ou via contentor Docker.
+* Node.js (versão 18 ou superior recomendada)
+* npm (gerenciador de pacotes do Node)
 
-### 1. Instalar Dependências
-```bash
-npm install
+### Passo a Passo
+
+1. **Instalar as dependências:**
+   No terminal, na raiz do projeto, execute:
+   ```bash
+   npm install
