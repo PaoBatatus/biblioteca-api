@@ -1,0 +1,105 @@
+### ==========================================
+### 1. AUTORES
+### ==========================================
+
+### Criar Autor
+POST http://localhost:3000/autores
+Content-Type: application/json
+
+{
+  "nome": "Machado de Assis",
+  "biografia": "Escritor brasileiro, considerado por muitos o maior nome da literatura brasileira."
+}
+
+### Listar Autores
+GET http://localhost:3000/autores
+
+### Buscar Autor por ID
+GET http://localhost:3000/autores/1
+
+
+### ==========================================
+### 2. CATEGORIAS
+### ==========================================
+
+### Criar Categoria
+POST http://localhost:3000/categorias
+Content-Type: application/json
+
+{
+  "nome": "Romance"
+}
+
+### Listar Categorias
+GET http://localhost:3000/categorias
+
+
+### ==========================================
+### 3. LEITORES
+### ==========================================
+
+### Criar Leitor
+POST http://localhost:3000/leitores
+Content-Type: application/json
+
+{
+  "nome": "João da Silva",
+  "matricula": "2026001",
+  "email": "joao.silva@email.com"
+}
+
+### Listar Leitores
+GET http://localhost:3000/leitores
+
+
+### ==========================================
+### 4. LIVROS
+### ==========================================
+
+### Criar Livro (Vinculado ao Autor 1 e Categoria 1)
+POST http://localhost:3000/livros
+Content-Type: application/json
+
+{
+  "titulo": "Dom Casmurro",
+  "isbn": "978-85-359-0277-8",
+  "quantidade_total": 2,
+  "autor_id": 1,
+  "categoria_id": 1
+}
+
+### Listar Livros
+GET http://localhost:3000/livros
+
+
+### ==========================================
+### 5. EMPRÉSTIMOS E REGRAS DE NEGÓCIO
+### ==========================================
+
+### Realizar Empréstimo com Sucesso
+POST http://localhost:3000/emprestimos
+Content-Type: application/json
+
+{
+  "livro_id": 1,
+  "leitor_id": 1
+}
+
+### Listar Empréstimos
+GET http://localhost:3000/emprestimos
+
+### Cenário de Erro (R1/R2): Tentar emprestar sem exemplares disponíveis
+# (Repita o POST acima até esgotar a quantidade_total do livro)
+POST http://localhost:3000/emprestimos
+Content-Type: application/json
+
+{
+  "livro_id": 1,
+  "leitor_id": 1
+}
+
+### Realizar Devolução (Calcula multas automaticamente se houver atraso)
+PATCH http://localhost:3000/emprestimos/1/devolver
+
+### Cenário de Erro: Tentar devolver um empréstimo já devolvido
+PATCH http://localhost:3000/emprestimos/1/devolver
