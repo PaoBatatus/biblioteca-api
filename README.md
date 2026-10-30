@@ -20,7 +20,9 @@ API modular desenvolvida com **NestJS**, **TypeORM** e **SQLite** (`better-sqlit
 Iniciar a aplicação em modo de desenvolvimento:
 
 Bash
+
 npm run start:dev
+
 Nota sobre a Base de Dados: O ficheiro da base de dados (database.sqlite) será gerado automaticamente na raiz do projeto assim que a aplicação iniciar, através do sincronismo do TypeORM.
 
 A API estará disponível em: http://localhost:3000
